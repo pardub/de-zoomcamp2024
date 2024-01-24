@@ -2,8 +2,7 @@
 
 * Question 2: 0.42.0
 
-* Question 3 : 
-How many taxi trips were totally made on September 18th 2019 ?
+* Question 3 :  How many taxi trips were totally made on September 18th 2019 ?
 
 SELECT COUNT(*) AS total_trips
 FROM "green_taxi_data"
@@ -12,8 +11,7 @@ AND DATE("lpep_dropoff_datetime") = '2019-09-18';
 
 answer :  15612
 
-* Question 4 : 2019-09-26
-Which was the pick up day with the largest trip distance Use the pick up time for your calculations.
+* Question 4 :  Which was the pick up day with the largest trip distance Use the pick up time for your calculations.
 
 SELECT DATE(lpep_pickup_datetime) AS pickup_date, SUM(trip_distance) AS total_distance
 FROM green_taxi_data
@@ -25,10 +23,7 @@ LIMIT 1;
 answer : 2019-09-26
 
 
-* Question 5 : 
-
-Consider lpep_pickup_datetime in '2019-09-18' and ignoring Borough has Unknown
-Which were the 3 pick up Boroughs that had a sum of total_amount superior to 50000 ?
+* Question 5 : Consider lpep_pickup_datetime in '2019-09-18' and ignoring Borough has Unknown. Which were the 3 pick up Boroughs that had a sum of total_amount superior to 50000 ?
 
 SELECT z."Borough", SUM(g."total_amount") AS total_revenue
 FROM "green_taxi_data" g
@@ -45,8 +40,7 @@ Brooklyn	96333.2400000004
 Manhattan	92271.3000000008
 Queens	78671.7100000003
 
-* Question 6 :
-For the passengers picked up in September 2019 in the zone name Astoria which was the drop off zone that had the largest tip ? We want the name of the zone, not the id.
+* Question 6 : For the passengers picked up in September 2019 in the zone name Astoria which was the drop off zone that had the largest tip ? We want the name of the zone, not the id.
 
 SELECT dropoff_zone."Zone" AS dropoff_zone_name, MAX(g."tip_amount") AS largest_tip
 FROM "green_taxi_data" g
@@ -61,8 +55,7 @@ LIMIT 1;
 
 Answer: JFK Airport	62.31
 
-* Question 7: 
-terraform init
+* Question 7:  terraform init
 
 Initializing the backend...
 
